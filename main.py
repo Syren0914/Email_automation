@@ -1,4 +1,5 @@
-from datetime import date  # core python module
+from datetime import date, timedelta  # core python module
+import time
 import pandas as pd  # pip install pandas
 
 from send_email import send_email  
@@ -32,6 +33,10 @@ def query_data_and_send_emails(df):
     return f"Total Emails Sent: {email_counter}"
 
 
-df = load_df(URL)
-result = query_data_and_send_emails(df)
-print(result)
+while True:
+    df = load_df(URL)
+    result = query_data_and_send_emails(df)
+    print(result)
+
+    # Sleep for 24 hours before checking again
+    time.sleep(24 * 60 * 60)  # Sleep for 24 hours
