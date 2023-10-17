@@ -61,3 +61,13 @@ def send_email(subject, receiver_email, name, due_date, amount):
         server.login(sender_email, password_email)
         server.sendmail(sender_email, receiver_email, msg.as_string())
 
+
+if __name__ == "__main__":
+    send_email(
+        subject="Pay Day Reminder",
+        name="Erdene Batbayar",
+        receiver_email="msrgaming35@gmail.com",
+        due_date="13, October 2023",
+        
+        amount="1200$",
+    )
