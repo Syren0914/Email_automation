@@ -51,11 +51,15 @@ def send_email(subject, receiver_email, name, due_date, amount):
         <p>Best regards</p>
         <p>Syren0914</p>
       </body>
+      
+
+      
     </html>
+    
     """,
         subtype="html",
     )
-
+    
     with smtplib.SMTP(EMAIL_SERVER, PORT) as server:
         server.starttls()
         server.login(sender_email, password_email)
